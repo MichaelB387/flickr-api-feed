@@ -16,7 +16,8 @@ $(document).ready(function () {
         var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"
         var animal = $(this).text();
         var flickrOptions = { 
-            
+            // value wiil change depending on which button is clicked according to the animal variable
+            tags: animal
         };
         $.getJSON(flickerAPI, flickrOptions, displayPhotos)
     });
