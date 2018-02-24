@@ -24,7 +24,15 @@ $(document).ready(function () {
         };
         // When flickr returns its list of photos to the page this function displayPhotos will run.
         function displayPhotos (data) {
-
+            var photoHTML = '<ul>';
+            // Loop through each photo form the flickr feed
+            $.each(data.items, function (i, photo){
+                photoHTML += '<li class="grid-25 tablet-grid-50">';
+                photoHTML += '<a href=" ' + photo.link + ' " class="image">';
+                photoHTML += '<img src=" ' + photo.media.m + ' "></a></li>';
+            })
+            photoHTML += '</ul>';
+            $('#photos').html(photoHTML);
         }
         $.getJSON(flickerAPI, flickrOptions, displayPhotos)
     });
