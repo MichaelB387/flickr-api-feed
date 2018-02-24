@@ -8,5 +8,16 @@ $(document).ready(function () {
         $('button').removeClass("selected")
         // This is highlighting the seleceted button
         $(this).addClass("selected"); // $(this) is reacting to the element on the click event, refers to the button the user clicks and only that button
+        // Basic structure of jquery's get json method
+        // $.getJSON(flickerAPI, flickrOptions, displayPhotos)
+        //              URL-------Data-----------Callback     
+
+        // This is a query string
+        var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?"
+        var animal = $(this).text();
+        var flickrOptions = { 
+            
+        };
+        $.getJSON(flickerAPI, flickrOptions, displayPhotos)
     });
 });
