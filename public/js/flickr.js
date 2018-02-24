@@ -17,8 +17,15 @@ $(document).ready(function () {
         var animal = $(this).text();
         var flickrOptions = { 
             // value wiil change depending on which button is clicked according to the animal variable
-            tags: animal
+            // This is a Query string parameter
+            tags: animal,
+            // requires format to be JSON
+            format: "json"
         };
+        // When flickr returns its list of photos to the page this function displayPhotos will run.
+        function displayPhotos (data) {
+
+        }
         $.getJSON(flickerAPI, flickrOptions, displayPhotos)
     });
 });
